@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blive.Acme.App</name>
+    </assembly>
+    <members>
+        <member name="T:Blive.Acme.App.Controllers.ClienteController">
+            <summary>
+            Controller used to perform CRU_D operations with Cliente entity.
+            </summary>
+        </member>
+        <member name="P:Blive.Acme.App.Controllers.ClienteController.ClienteRepository">
+            <summary>
+            Repository (DI).
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Controllers.ClienteController.#ctor(Blive.Acme.App.Repository.IClienteRepository)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="clienteRepository"></param>
+        </member>
+        <member name="M:Blive.Acme.App.Controllers.ClienteController.Get">
+            <summary>
+            GET api/cliente
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Blive.Acme.App.Controllers.ClienteController.Get(System.String)">
+            <summary>
+            GET api/cliente/000.000.000-00
+            </summary>
+            <param name="cpf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blive.Acme.App.Controllers.ClienteController.Post(Blive.Acme.App.Models.Cliente)">
+            <summary>
+            POST api/cliente
+            </summary>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blive.Acme.App.Program">
+            <summary>
+            Application entry point.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Program.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Program.Main(System.String[])">
+            <summary>
+            Main (entry point).
+            </summary>
+            <param name="args">The command line arguments passed to the service.</param>
+        </member>
+        <member name="M:Blive.Acme.App.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creates the web host builder.
+            </summary>
+            <param name="args">The command line arguments passed to the service.</param>
+            <returns>IWebHostBuilder instance</returns>
+        </member>
+        <member name="T:Blive.Acme.App.Repository.ClienteRepository">
+            <summary>
+            Represents an in memory database/repository of Clientes
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.ClienteRepository.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.ClienteRepository.Add(System.String,Blive.Acme.App.Models.Cliente)">
+            <summary>
+            Adds a new item in the repository.
+            </summary>
+            <param name="cpf">The object to use as the key of the element to add.</param>
+            <param name="cliente">The object to use as the value of the element to add.</param>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.ClienteRepository.Get(System.String)">
+            <summary>
+             Gets the value associated with the specified key.
+            </summary>
+            <param name="cpf">The key of the element to get.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.ClienteRepository.GetAll">
+            <summary>
+            Gets an ICollection containing the values in the repository.
+            </summary>
+            <returns>An ICollection containing the values in the cache.</returns>
+        </member>
+        <member name="T:Blive.Acme.App.Repository.IClienteRepository">
+            <summary>
+            Define methods to access the Cliente repository.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.IClienteRepository.Add(System.String,Blive.Acme.App.Models.Cliente)">
+            <summary>
+            Adds a new item in the repository.
+            </summary>
+            <param name="cpf">The object to use as the key of the element to add.</param>
+            <param name="cliente">The object to use as the value of the element to add.</param>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.IClienteRepository.Get(System.String)">
+            <summary>
+             Gets the value associated with the specified key.
+            </summary>
+            <param name="cpf">The key of the element to get.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blive.Acme.App.Repository.IClienteRepository.GetAll">
+            <summary>
+            Gets an ICollection containing the values in the repository.
+            </summary>
+            <returns>An ICollection containing the values in the cache.</returns>
+        </member>
+        <member name="T:Blive.Acme.App.Startup">
+            <summary>
+            Handles the service initiation.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="configuration">A set of key/value application configuration properties.</param>
+        </member>
+        <member name="P:Blive.Acme.App.Startup.Configuration">
+            <summary>
+            Contains set of key/value application configuration properties.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Contains a collection of service descriptors.</param>
+        </member>
+        <member name="M:Blive.Acme.App.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">Provides the mechanisms to configure an application's request pipeline</param>
+            <param name="env">Information about the web hosting environment an application is running in.</param>
+        </member>
+        <member name="T:Blive.Acme.App.Utils.CpfValidator">
+            <summary>
+            Checks if the CPF is valid.
+            </summary>
+        </member>
+        <member name="M:Blive.Acme.App.Utils.CpfValidator.IsValid(System.String)">
+            <summary>
+            Checks if the CPF is valid.
+            </summary>
+            <param name="cpf">The CPF to be validated.</param>
+            <returns>True if is valid, otherwise false.</returns>
+        </member>
+    </members>
+</doc>

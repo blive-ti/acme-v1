@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "1ddcdb01-5851-4260-bea4-f56d4e870fe8",
+		"name": "bLive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "acme - listar clientes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5001/api/cliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acme - lista cliente por cpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/cliente/123.123.123-00",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"cliente",
+						"123.123.123-00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acme - criar cliente (completo)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"bLive\",\n    \"cpf\": \"012.345.678-90\",\n    \"endereco\": {\n        \"cep\": \"30380-435\",\n        \"logradouro\": \"Avenida Raja Gabaglia\",\n        \"complemento\": \"6 Andar\",\n        \"bairro\": \"Luxemburgo\",\n        \"localidade\": \"Belo Horizonte\",\n        \"uf\": \"MG\",\n        \"ibge\": \"3106200\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/cliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "acme - criar cliente (incompleto)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"acme\",\n    \"cpf\": \"987.654.321.09\",\n    \"endereco\": {\n        \"cep\": \"34001-164\",\n        \"uf\": \"MG\",\n        \"ibge\": \"3144805\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/cliente",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
